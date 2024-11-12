@@ -25,7 +25,7 @@ RUN chmod +x /app/wisecow.sh
 # Modify .bashrc to set cowsay as fortune
 
 
-# Expose the port that the server will run on
+# Expose the port that the server will run on github
 EXPOSE 4499
 
 # Run the script
