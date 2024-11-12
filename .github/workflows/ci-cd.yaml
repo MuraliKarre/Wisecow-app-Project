@@ -40,10 +40,12 @@ jobs:
       uses: azure/setup-kubectl@v1
       with:
         version: 'latest'
+    
+    - name: Set up kubeconfig
+      run: |
+        echo "${{ secrets.KUBE_CONFIG }}" | base64 --decode > $HOME/.kube/config
 
     - name: Deploy to Kubernetes
       run: |
         kubectl apply -f manifest/wisecow-deployment.yaml
         kubectl apply -f manifest/wisecow-service.yaml
-      env:
-        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
