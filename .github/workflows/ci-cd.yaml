@@ -49,3 +49,8 @@ jobs:
       run: |
         kubectl apply -f manifest/wisecow-deployment.yaml
         kubectl apply -f manifest/wisecow-service.yaml
+
+    - name: Check application status
+      run: |
+          kubectl get pods -n default
+          kubectl get svc -n default
