@@ -43,7 +43,7 @@ jobs:
 
     - name: Deploy to Kubernetes
       run: |
-        kubectl apply -f manifest/deployment.yaml
-        kubectl apply -f manifest/service.yaml
+        kubectl apply -f manifest/wisecow-deployment.yaml
+        kubectl apply -f manifest/wisecow-service.yaml
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
